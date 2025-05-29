@@ -21,10 +21,12 @@ public class AuthController {
 
 
     // Registro de novo usuário
-    @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> create(@Valid @RequestBody AuthDTO authDTO) {
         return authService.createUser(authDTO);
     }
+
+
 
     // Login do usuário
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
