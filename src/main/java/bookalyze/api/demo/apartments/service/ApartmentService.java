@@ -35,8 +35,8 @@ public class ApartmentService {
             apartment.setTitle(updatedApartment.getTitle());
             apartment.setCity(updatedApartment.getCity());
             apartment.setState(updatedApartment.getState());
-            apartment.setMax_guests(updatedApartment.getMax_guests());
-            apartment.setDaily_rate(updatedApartment.getDaily_rate());
+            apartment.setMaxGuests(updatedApartment.getMaxGuests());
+            apartment.setDailyRate(updatedApartment.getDailyRate());
             return apartmentRepository.save(apartment);
         }).orElseThrow(() -> new RuntimeException("Apartment not found with id " + id));
     }

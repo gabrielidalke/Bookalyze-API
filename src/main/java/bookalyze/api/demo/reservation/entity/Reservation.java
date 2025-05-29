@@ -24,11 +24,17 @@ public class Reservation {
     @JoinColumn(name = "contact_id", nullable = false)
     private Contacts contact;
 
-    private LocalDate checkin_date;
-    private LocalDate checkout_date;
-    private int guests;
-    private double total_price;
+    @Column(name = "checkin_date", nullable = false)
+    private LocalDate checkinDate;
 
-    @Column(length = 20)
+    @Column(name = "checkout_date", nullable = false)
+    private LocalDate checkoutDate;
+
+    private int guests;
+
+    @Column(name = "total_price", nullable = false)
+    private double totalPrice;
+
+    @Column(length = 20, nullable = false)
     private String channel; // airbnb, booking.com, direto
 }

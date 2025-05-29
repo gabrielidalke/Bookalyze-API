@@ -31,13 +31,15 @@ public class ContactsService {
     }
 
     public Contacts update(Long id, Contacts updatedContact) {
-        return contactsRepository.findById(id).map(contact -> {
-            contact.setName(updatedContact.getName());
-            contact.setEmail(updatedContact.getEmail());
-            contact.setPhone(updatedContact.getPhone());
-            contact.setType(updatedContact.getType());
-            contact.setDocument(updatedContact.getDocument());
-            return contactsRepository.save(contact);
-        }).orElseThrow(() -> new RuntimeException("Contact not found with id " + id));
+        return contactsRepository.findById(id)
+                .map(contact -> {
+                    contact.setName(updatedContact.getName());
+                    contact.setEmail(updatedContact.getEmail());
+                    contact.setPhone(updatedContact.getPhone());
+                    contact.setType(updatedContact.getType());
+                    contact.setDocument(updatedContact.getDocument());
+                    return contactsRepository.save(contact);
+                })
+                .orElseThrow(() -> new RuntimeException("Contato não encontrado com ID " + id));
     }
 }
