@@ -42,4 +42,5 @@ public class ContactsService {
                 })
                 .orElseThrow(() -> new RuntimeException("Contato não encontrado com ID " + id));
     }
+
 }

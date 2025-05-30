@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/apartments")
-
 public class ApartmentController {
 
     @Autowired
@@ -31,25 +30,5 @@ public class ApartmentController {
     @PostMapping
     public Apartment createApartment(@RequestBody Apartment apartment) {
         return apartmentService.save(apartment);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Apartment> updateApartment(@PathVariable Long id, @RequestBody Apartment apartment) {
-        try {
-            Apartment updated = apartmentService.update(id, apartment);
-            return ResponseEntity.ok(updated);
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteApartment(@PathVariable Long id) {
-        if (apartmentService.findById(id).isPresent()) {
-            apartmentService.delete(id);
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
     }
 }

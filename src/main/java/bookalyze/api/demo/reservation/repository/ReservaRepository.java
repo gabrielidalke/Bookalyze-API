@@ -16,4 +16,6 @@ public interface ReservaRepository extends JpaRepository<Reservation, Long> {
 
     // Buscar reservas por cidade e intervalo de datas de check-in
     List<Reservation> findByApartment_CityAndCheckinDateBetween(String cidade, LocalDate dataInicio, LocalDate dataFim);
+    // ... dentro da interface ReservaRepository
+
 }
