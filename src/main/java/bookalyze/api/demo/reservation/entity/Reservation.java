@@ -35,6 +35,7 @@ public class Reservation {
     @Column(name = "total_price", nullable = false)
     private double totalPrice;
 
-    @Column(length = 20, nullable = false)
-    private String channel; // airbnb, booking.com, direto
+    @Column(name = "channel", length = 20, nullable = false)
+    private String channel;
+
 }

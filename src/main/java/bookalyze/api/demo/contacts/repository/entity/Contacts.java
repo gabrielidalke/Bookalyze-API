@@ -13,7 +13,7 @@ public class Contacts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "contacts_id") // Alterado para refletir o nome correto da coluna no banco
+    @Column(name = "contacts_id")
     private Long id;
 
     @NotBlank(message = "Nome não pode ser vazio.")

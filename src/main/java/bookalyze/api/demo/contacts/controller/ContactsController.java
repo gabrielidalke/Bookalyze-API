@@ -30,7 +30,7 @@ public class ContactsController {
     @PostMapping
     public ResponseEntity<Contacts> createContact(@RequestBody Contacts contact) {
         Contacts savedContact = contactsService.save(contact);
-        return ResponseEntity.status(201).body(savedContact); // Retorna o contato criado com status 201
+        return ResponseEntity.status(201).body(savedContact);
     }
 
     @PutMapping("/{id}")

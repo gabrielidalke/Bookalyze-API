@@ -5,12 +5,12 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "apartments") // Corrigido para bater com o nome da tabela no banco
+@Table(name = "apartments")
 public class Apartment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id") // Nome da coluna no banco
+    @Column(name = "id")
     private Long id;
 
     private String title;
